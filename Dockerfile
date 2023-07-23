@@ -13,11 +13,11 @@ WORKDIR /app
 EXPOSE 8000 
 
 
-RUN PYTHON -m venv /py && \
+RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     rm -rf /tmp && \
-    add user \
+    adduser \
         --disabled-password \
         --no-create-home \
          django-user 
